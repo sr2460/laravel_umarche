@@ -1,14 +1,35 @@
 <?php
 
-use App\Http\Controllers\user\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\user\Auth\ConfirmablePasswordController;
-use App\Http\Controllers\user\Auth\EmailVerificationNotificationController;
-use App\Http\Controllers\user\Auth\EmailVerificationPromptController;
-use App\Http\Controllers\user\Auth\NewPasswordController;
-use App\Http\Controllers\user\Auth\PasswordResetLinkController;
-use App\Http\Controllers\user\Auth\RegisteredUserController;
-use App\Http\Controllers\user\Auth\VerifyEmailController;
+use App\Http\Controllers\admin\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\admin\Auth\ConfirmablePasswordController;
+use App\Http\Controllers\admin\Auth\EmailVerificationNotificationController;
+use App\Http\Controllers\admin\Auth\EmailVerificationPromptController;
+use App\Http\Controllers\admin\Auth\NewPasswordController;
+use App\Http\Controllers\admin\Auth\PasswordResetLinkController;
+use App\Http\Controllers\admin\Auth\RegisteredUserController;
+use App\Http\Controllers\admin\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('admin.welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware(['auth:admin'])->name('dashboard');
+
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
