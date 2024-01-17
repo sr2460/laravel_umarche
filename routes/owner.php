@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Owner\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Owner\Auth\ConfirmablePasswordController;
-use App\Http\Controllers\Owner\EmailVerificationNotificationController;
+use App\Http\Controllers\Owner\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Owner\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Owner\Auth\NewPasswordController;
 use App\Http\Controllers\Owner\Auth\PasswordResetLinkController;
