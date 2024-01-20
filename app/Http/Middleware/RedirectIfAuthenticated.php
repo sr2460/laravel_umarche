@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Auth;
 
 class RedirectIfAuthenticated
 {
-    private const Guard_USER = 'users';
-    private const Guard_Owner = 'owners';
-    private const Guard_ADMIN = 'admin';
+    private const GUARD_USER = 'users';
+    private const GUARD_OWNER = 'owners';
+    private const GUARD_ADMIN = 'admin';
 
     /**
      * Handle an incoming request.
@@ -31,20 +31,17 @@ class RedirectIfAuthenticated
         //    }
         //}
 
-        if(Auth::guard(self::GUARD_USER)->check() && $request->routeIS('user.*')){
-
+        if(Auth::guard(self::GUARD_USER)->check() && $request->routeIs('user.*')){
             return redirect(RouteServiceProvider::HOME);
         }
 
 
-        if(Auth::guard(self::GUARD_OWNER)->check() && $request->routeIS('owner.*')){
-
+        if(Auth::guard(self::GUARD_OWNER)->check() && $request->routeIs('owner.*')){
             return redirect(RouteServiceProvider::OWNER_HOME);
         }
 
 
-        if(Auth::guard(self::GUARD_ADMIN)->check() && $request->routeIS('admin.*')){
-
+        if(Auth::guard(self::GUARD_ADMIN)->check() && $request->routeIs('admin.*')){
             return redirect(RouteServiceProvider::ADMIN_HOME);
         }
 
