@@ -57,7 +57,7 @@ Route::middleware('guest')->group(function () {
                 ->name('password.update');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth:owners')->group(function () {
     Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])
                 ->middleware('auth:owners')
                 ->name('verification.notice');
@@ -79,5 +79,5 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
             ->middleware('auth:owners')
-                ->name('logout');
+            ->name('logout');
 });
