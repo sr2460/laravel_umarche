@@ -65,8 +65,8 @@ class ShopController extends Controller
 
         $imageFile = $request->image; //一時保存
         if(!is_null($imageFile) && $imageFile->isValid() ){
-            //$fileNameToStore = ImageService::Upload($imageFile, 'shops');　最終的にこれで関数化予定
-            $fileNameToStore= Storage::putFile('public/shops', $imageFile); //リサイズなしの場合
+            $fileNameToStore = ImageService::Upload($imageFile, 'shops');//最終的にこれで関数化予定
+            //$fileNameToStore= Storage::putFile('public/shops', $imageFile); //リサイズなしの場合
             
 
 
