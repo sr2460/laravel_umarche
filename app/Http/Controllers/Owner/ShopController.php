@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-//use InterventionImage;
+use InterventionImage;
 use App\Http\Requests\UploadImageRequest;
 use App\Services\ImageService;
 
@@ -68,7 +68,13 @@ class ShopController extends Controller
             $fileNameToStore = ImageService::Upload($imageFile, 'shops');//最終的にこれで関数化予定
             //$fileNameToStore= Storage::putFile('public/shops', $imageFile); //リサイズなしの場合
             
-
+            //$fileName = uniqid(rand().'_');
+            //$extension = $imageFile->extension();
+            //$fileNameToStore = $fileName. '.' . $extension;
+            //$resizedImage = InterventionImage::make($imageFile)->resize(1920, 1080)->encode();
+            
+            //dd($imageFile, $resizedImage);
+            //Storage::put('public/shops/' . $fileNameToStore,$resizedImage );
 
 
         }
@@ -76,7 +82,6 @@ class ShopController extends Controller
         $shop->name= $request->name;
         $shop->information= $request->information;
         $shop->is_selling= $request->is_selling;
-
         if(!is_null($imageFile) && $imageFile->isValid()){
 
             $shop->filename = $fileNameToStore;

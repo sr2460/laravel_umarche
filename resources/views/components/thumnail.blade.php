@@ -2,7 +2,7 @@
 if($type ==='shops'){
     $path = 'storage/shops/';
 }
-if($type ==='shops'){
+if($type ==='products'){
     $path = 'storage/products/';
 }
 

@@ -19,9 +19,9 @@ class ImageController extends Controller
 
             $id = $request->route()->parameter('image');
             if(!is_null($id)){
-            $imageId = Image::findOrFail($id)->owner->id;
-                $ImageId = (int)$imageId;
-                if($imageId !==  Auth::id()){ // 同じでなかったら
+            $imagesOwnerId = Image::findOrFail($id)->owner->id;
+                $ImageId = (int)$imagesOwnerId;
+                if($ImageId !==  Auth::id()){
                 abort(404);
                 }
             }
