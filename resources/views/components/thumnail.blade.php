@@ -12,6 +12,6 @@ if($type ==='shops'){
     @if(empty($filename))
         <img src="{{ asset('images/no_image.jpg')}}">
     @else
-        <img src="{{assert($path . $filename)}}"
+        <img src="{{ asset($path . $filename)}}">
     @endif
 </div>

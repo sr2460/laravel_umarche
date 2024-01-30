@@ -14,6 +14,7 @@ class CreateImagesTable extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('owner_id')
             ->constrained()
             ->onUpdate('cascade')
