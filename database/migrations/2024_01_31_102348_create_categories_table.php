@@ -20,7 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('secandary_categories', function (Blueprint $table) {
+        Schema::create('secondary_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->integer('sort_order');
@@ -37,7 +37,7 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('secandary_categories');
+        Schema::dropIfExists('secondary_categories');
         Schema::dropIfExists('primary_categories');
     }
 }
