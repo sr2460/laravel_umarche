@@ -156,7 +156,9 @@ return [
     'attributes' => [
         'name' => '名前', 
     'email' => 'メールアドレス', 
-    'password' => 'パスワード'
+    'password' => 'パスワード',
+    'quantity' => '数量',
+    'is_selling' =>'販売中・停止中'
 ],
 
 ];
