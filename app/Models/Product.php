@@ -31,7 +31,7 @@ class Product extends Model
     {
         return $this->belongsTo(Shop::class);
     }
-    public function categoty()
+    public function category()
     {
         return $this->belongsTo(SecondaryCategory::class, 'secondary_category_id');
     }
