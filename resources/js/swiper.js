@@ -8,7 +8,7 @@ import SwiperCore,{Navigation, Pagination} from 'swiper/core';
 
 SwiperCore.use([Navigation, Pagination]);
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     //direction: 'vertical',
     loop: true,

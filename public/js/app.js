@@ -5443,7 +5443,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 swiper_core__WEBPACK_IMPORTED_MODULE_1__["default"].use([swiper_core__WEBPACK_IMPORTED_MODULE_2__["default"], swiper_core__WEBPACK_IMPORTED_MODULE_3__["default"]]);
-var swiper = new swiper_core__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper', {
+var swiper = new swiper_core__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper-container', {
   // Optional parameters
   //direction: 'vertical',
   loop: true,

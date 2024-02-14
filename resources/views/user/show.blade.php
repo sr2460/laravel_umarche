@@ -12,49 +12,38 @@
                 <div class ="md:flex md:justyfy-around">
                     <div class="md:w-1/2">
                         <!-- Slider main container -->
-                        <div class="swiper">
+                        <div class="swiper-container">
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                             <!-- Slides -->
-                            <div class="swiper-slide">
                                 <div class="swiper-slide">
                                     @if($product->imageFirst->filename !== null)
-                                        <img src="{{ asset('storage/products/' .
-                                        $product->imageFirst->filename )}}">
+                                        <img src="{{ asset('storage/products/' . $product->imageFirst->filename )}}">
                                     @else
                                      <img src="">
                                     @endif
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="swiper-slide">
-                                        @if($product->imageSecond->filename !== null)
-                                            <img src="{{ asset('storage/products/' .
-                                            $product->imageSecond->filename )}}">
-                                        @else
+                                    @if($product->imageSecond->filename !== null)
+                                        <img src="{{ asset('storage/products/' . $product->imageSecond->filename )}}">
+                                    @else
                                          <img src="">
-                                        @endif
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="swiper-slide">
-                                            @if($product->imageThird->filename !== null)
-                                                <img src="{{ asset('storage/products/' .
-                                                $product->imageThird->filename )}}">
-                                            @else
-                                             <img src="">
-                                            @endif
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="swiper-slide">
-                                                @if($product->imageFourth->filename !== null)
-                                                    <img src="{{ asset('storage/products/' .
-                                                    $product->imageFourth->filename )}}">
-                                                @else
-                                                 <img src="">
-                                                @endif
-                                            </div>
-
-                            </div>
-
+                                    @endif
+                                </div>
+                                <div class="swiper-slide">
+                                    @if($product->imageThird->filename !== null)
+                                        <img src="{{ asset('storage/products/' . $product->imageThird->filename )}}">
+                                    @else
+                                        <img src="">
+                                    @endif
+                                </div>
+                                <div class="swiper-slide">
+                                    @if($product->imageFourth->filename !== null)
+                                        <img src="{{ asset('storage/products/' . $product->imageFourth->filename )}}">
+                                    @else
+                                        <img src="">
+                                     @endif
+                                </div>
                             </div>
                             <!-- If we need pagination -->
                             <div class="swiper-pagination"></div>
@@ -87,12 +76,11 @@
                                 </div>
                             </div>
                                 <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">カートに入れる</button>
-                            </div>
                     </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="{{ mix('js/swiper.js') }}"></script>
+    <script src="{{ mix('js/swiper.js')}}"></script>
 </x-app-layout>
