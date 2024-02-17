@@ -13,12 +13,28 @@ class ItemController extends Controller
     public function __construct()
     {
         $this->middleware('auth:users');
+        $this->middleware(function ($request, $next) {
+
+
+            $id = $request->route()->parameter('item');
+            if(!is_null($id)){
+            $itemID = Product::AvailableItems()->where('products.id',$id)->exists();
+                if(!$itemID){
+                abort(404);
+                }
+            }
+
+            return $next($request);
+
+        });
     }
     public function index()
     {
         $products = Product::AvailableItems()->get();
         return view('user.index', compact('products'));
     }
+    
+
 
     public function show($id)
     {
