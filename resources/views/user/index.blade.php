@@ -25,15 +25,15 @@
                                 selected
                                 @endif>料金の安い順
                             </option>
-                            <option value="{{ \Constant::SORT_ORDER['lowerPrice']}}"
-                            @if(\Request::get('later') === \Constant::SORT_ORDER['later'] )
-                            selected
-                            @endif>古い順
+                            <option value="{{ \Constant::SORT_ORDER['later']}}"
+                                @if(\Request::get('sort') === \Constant::SORT_ORDER['later'] )
+                                selected
+                                @endif>新しい順
                             </option>
                             <option value="{{ \Constant::SORT_ORDER['older']}}"
                                 @if(\Request::get('sort') === \Constant::SORT_ORDER['older'] )
                                 selected
-                                @endif>新しい順
+                                @endif>古い順
                             </option>
                         </select>                    
                 </div>
