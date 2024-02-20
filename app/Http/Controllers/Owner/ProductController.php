@@ -162,7 +162,7 @@ class ProductController extends Controller
 
         }else{
             try{
-                DB::transaction(function()use($request, $product){
+                DB::transaction(function() use($request, $product){
 
                         $product->name = $request->name;
                         $product->information = $request->information;
