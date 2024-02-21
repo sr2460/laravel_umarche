@@ -11,12 +11,12 @@ class OrderedMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $Product;
+    public $product;
     public $user;
 
     public function __construct($product, $user)
     {
-        $this->products = $product;
+        $this->product = $product;
         $this->user = $user;
     }
 
